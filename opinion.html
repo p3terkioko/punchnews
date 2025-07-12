@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Opinion - Punch News</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.opinion-header {
+    background-color: #8A2BE2;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+.opinion-header h1 {
+    font-size: 26px;
+    margin: 0;
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="nav-container">
+<div class="logo">
+<a href="index.html">Punch News</a>
+</div>
+<button class="menu-toggle">☰</button>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="breaking-news.html">Breaking News</a></li>
+<li><a href="business.html">Business</a></li>
+<li><a href="entertainment.html">Entertainment</a></li>
+<li><a href="sports.html">Sports</a></li>
+<li><a href="opinion.html" style="color: #FF0000;">Opinion</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+</header>
+
+<main>
+<div class="opinion-header">
+<h1>Opinion & Editorial</h1>
+<p>Opinions and editorial pieces</p>
+</div>
+
+<div class="container">
+<div class="search-container">
+<input type="text" id="searchBar" placeholder="Search opinion articles...">
+</div>
+
+<div id="articlesContainer" class="articles-grid">
+<!-- Opinion articles will be loaded here -->
+</div>
+</div>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Punch News</h3>
+<p>Your news source</p>
+</div>
+<div class="footer-section">
+<h4>Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Punch News</p>
+</div>
+</div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+window.onload = function() {
+    loadCategoryArticles('opinion');
+};
+</script>
+</body>
+</html>

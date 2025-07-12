@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breaking News - Punch News</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Punch News</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="breaking-news.html" class="active">Breaking News</a></li>
+                    <li><a href="business.html">Business</a></li>
+                    <li><a href="entertainment.html">Entertainment</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="opinion.html">Opinion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="page-header">
+                <h1>Breaking News</h1>
+                <p>Latest urgent news stories</p>
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">Loading...</div>
+            <div id="errorContainer" style="display: none;"></div>
+
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search breaking news...">
+
+            <div id="articlesContainer">
+                <!-- Articles go here -->
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Live Updates</h3>
+            <p><strong>2 min ago:</strong> Markets respond to news</p>
+            <p><strong>15 min ago:</strong> Climate talks continue</p>
+            <p><strong>1 hour ago:</strong> Medical breakthrough funded</p>
+            
+            <h3>Categories</h3>
+            <ul class="category-list">
+                <li><a href="index.html">All News</a></li>
+                <li><a href="business.html">Business</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="opinion.html">Opinion</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2025 Punch News. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Load breaking news when page loads
+        window.onload = function() {
+            setTimeout(function() {
+                loadCategoryArticles('breaking-news');
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">📰 Punch News</a>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="breaking-news.html" class="active">Breaking News</a></li>
+                    <li><a href="business.html">Business</a></li>
+                    <li><a href="entertainment.html">Entertainment</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="opinion.html">Opinion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="page-header">
+                <h1>🚨 Breaking News</h1>
+                <p>Latest urgent news and developing stories as they happen</p>
+            </div>
+
+            <!-- Loading message -->
+            <div id="loading" class="loading hidden">
+                Loading breaking news...
+            </div>
+            
+            <!-- Error container -->
+            <div id="errorContainer" class="hidden"></div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchBar" class="search-bar" placeholder="Search breaking news...">
+            </div>
+
+            <!-- Breaking News Articles -->
+            <section>
+                <div id="articlesContainer">
+                    <!-- Articles will be loaded here by JavaScript -->
+                </div>
+            </section>
+        </div>
+
+        <aside class="sidebar">
+            <h3>🔴 Live Updates</h3>
+            <div class="live-updates">
+                <div class="update-item">
+                    <span class="update-time">2 min ago</span>
+                    <p>Markets respond positively to economic recovery news</p>
+                </div>
+                <div class="update-item">
+                    <span class="update-time">15 min ago</span>
+                    <p>Climate summit discussions continue with positive momentum</p>
+                </div>
+                <div class="update-item">
+                    <span class="update-time">1 hour ago</span>
+                    <p>Medical breakthrough receives additional funding</p>
+                </div>
+            </div>
+
+            <h3 class="sidebar-section">Categories</h3>
+            <ul class="category-list">
+                <li><a href="index.html">All News</a></li>
+                <li><a href="business.html">Business</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="opinion.html">Opinion</a></li>
+            </ul>
+
+            <h3 class="sidebar-section">News Alerts</h3>
+            <div class="news-alerts">
+                <p>Get breaking news alerts delivered directly to your email</p>
+                <input type="email" placeholder="Enter your email" class="newsletter-input">
+                <button class="btn newsletter-btn">Subscribe to Alerts</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" onclick="window.print()">Print</a></li>
+            </ul>
+            <p>&copy; 2025 Punch News. All rights reserved. | Keeping you informed, always.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Load breaking news articles when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for main.js to load articles, then filter for breaking news
+            setTimeout(() => {
+                window.PunchNews.loadCategoryArticles('breaking-news');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

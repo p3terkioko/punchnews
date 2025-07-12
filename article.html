@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Article - Punch News</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Punch News</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="breaking-news.html">Breaking News</a></li>
+                    <li><a href="business.html">Business</a></li>
+                    <li><a href="entertainment.html">Entertainment</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="opinion.html">Opinion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div id="loading" class="loading" style="display: none;">Loading article...</div>
+            <div id="errorContainer" style="display: none;"></div>
+
+            <div id="singleArticle">
+                <!-- Article content goes here -->
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Share This Article</h3>
+            <button class="btn" onclick="window.print()">Print Article</button>
+            <button class="btn" onclick="alert('Shared!')">Share</button>
+            
+            <h3>Categories</h3>
+            <ul class="category-list">
+                <li><a href="index.html">All News</a></li>
+                <li><a href="breaking-news.html">Breaking News</a></li>
+                <li><a href="business.html">Business</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="opinion.html">Opinion</a></li>
+            </ul>
+
+            <h3>Contact</h3>
+            <p>Have feedback?</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2025 Punch News. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">📰 Punch News</a>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="breaking-news.html">Breaking News</a></li>
+                    <li><a href="business.html">Business</a></li>
+                    <li><a href="entertainment.html">Entertainment</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="opinion.html">Opinion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <!-- Loading message -->
+            <div id="loading" class="loading hidden">
+                Loading article...
+            </div>
+            
+            <!-- Error container -->
+            <div id="errorContainer" class="hidden"></div>
+
+            <!-- Single Article Container -->
+            <div id="singleArticle">
+                <!-- Article content will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Related Articles Section -->
+            <section class="related-articles">
+                <h3 class="section-title">Related Articles</h3>
+                <div id="relatedArticles" class="related-grid">
+                    <!-- Related articles will be loaded here -->
+                </div>
+            </section>
+        </div>
+
+        <aside class="sidebar">
+            <h3>Share This Article</h3>
+            <div class="share-buttons">
+                <button class="btn share-btn" onclick="shareArticle('twitter')">Share on Twitter</button>
+                <button class="btn share-btn" onclick="shareArticle('facebook')">Share on Facebook</button>
+                <button class="btn share-btn" onclick="shareArticle('email')">Share via Email</button>
+                <button class="btn share-btn" onclick="window.print()">Print Article</button>
+            </div>
+
+            <h3 class="sidebar-section">Categories</h3>
+            <ul class="category-list">
+                <li><a href="index.html">All News</a></li>
+                <li><a href="breaking-news.html">Breaking News</a></li>
+                <li><a href="business.html">Business</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="opinion.html">Opinion</a></li>
+            </ul>
+
+            <h3 class="sidebar-section">Contact</h3>
+            <div class="contact-info">
+                <p>Have feedback on this article?</p>
+                <a href="contact.html" class="btn">Contact Editorial Team</a>
+            </div>
+
+            <div class="newsletter-signup">
+                <h4 class="newsletter-title">Stay Updated</h4>
+                <p class="newsletter-text">Get the latest news delivered to your inbox</p>
+                <input type="email" placeholder="Enter your email" class="newsletter-input">
+                <button class="btn newsletter-btn">Subscribe</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" onclick="window.print()">Print</a></li>
+            </ul>
+            <p>&copy; 2025 Punch News. All rights reserved. | Keeping you informed, always.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Share functionality
+        function shareArticle(platform) {
+            const title = document.querySelector('.article-title')?.textContent || 'Punch News Article';
+            const url = window.location.href;
+            
+            switch(platform) {
+                case 'twitter':
+                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank');
+                    break;
+                case 'facebook':
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                    break;
+                case 'email':
+                    window.location.href = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent('Read this article: ' + url)}`;
+                    break;
+            }
+        }
+
+        // Load related articles
+        function loadRelatedArticles(currentArticleId, category) {
+            if (!window.articles || window.articles.length === 0) return;
+            
+            const relatedContainer = document.getElementById('relatedArticles');
+            if (!relatedContainer) return;
+            
+            // Filter articles by same category, excluding current article
+            const related = window.articles
+                .filter(article => article.category === category && article.id != currentArticleId)
+                .slice(0, 3);
+            
+            if (related.length === 0) {
+                relatedContainer.innerHTML = '<p>No related articles found.</p>';
+                return;
+            }
+            
+            relatedContainer.innerHTML = related.map(article => `
+                <div class="related-article-card">
+                    <img src="${article.image}" alt="${article.title}" class="related-image" loading="lazy">
+                    <h4><a href="article.html?id=${article.id}">${article.title}</a></h4>
+                    <p class="related-meta">By ${article.author} | ${new Date(article.date).toLocaleDateString()}</p>
+                </div>
+            `).join('');
+        }
+
+        // Enhanced article loading with related articles
+        document.addEventListener('DOMContentLoaded', function() {
+            // Override the display function to also load related articles
+            const originalDisplaySingleArticle = window.displaySingleArticle;
+            
+            setTimeout(() => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const articleId = urlParams.get('id');
+                
+                if (articleId && window.articles) {
+                    const article = window.articles.find(a => a.id == articleId);
+                    if (article) {
+                        loadRelatedArticles(articleId, article.category);
+                    }
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Punch News - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Punch News</a>
+            <button class="menu-toggle">Menu</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="breaking-news.html">Breaking News</a></li>
+                    <li><a href="business.html">Business</a></li>
+                    <li><a href="entertainment.html">Entertainment</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="opinion.html">Opinion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div id="loading" class="loading" style="display: none;">Loading...</div>
+            <div id="errorContainer" style="display: none;"></div>
+            
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search articles...">
+
+            <div class="featured-article" id="featuredArticle">
+                <!-- Featured article goes here -->
+            </div>
+
+            <h2 class="section-title">Latest News</h2>
+            <div id="articlesContainer">
+                <!-- Articles go here -->
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Categories</h3>
+            <ul class="category-list">
+                <li><a href="index.html">All News</a></li>
+                <li><a href="breaking-news.html">Breaking News</a></li>
+                <li><a href="business.html">Business</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="opinion.html">Opinion</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2025 Punch News. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
