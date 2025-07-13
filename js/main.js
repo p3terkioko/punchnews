@@ -3,15 +3,16 @@ var articles = [];
 
 // Wait for page to load
 window.onload = function() {
-    loadArticles();
     setupSearch();
     setupMobileMenu();
     
-    // Check if we're on article page
+    // Check if we're on article page and load articles first
     var urlParams = new URLSearchParams(window.location.search);
     var articleId = urlParams.get('id');
     if (articleId) {
-        showSingleArticle(articleId);
+        loadArticlesAndShowSingle(articleId);
+    } else {
+        loadArticles();
     }
 };
 
@@ -37,6 +38,39 @@ function loadArticles() {
                 
                 showArticles(articles);
                 showFeaturedArticle();
+            } else {
+                if (loading) {
+                    loading.style.display = 'none';
+                }
+                showError('Error loading articles!');
+            }
+        }
+    };
+    xhr.send();
+}
+
+// Load articles and then show single article
+function loadArticlesAndShowSingle(articleId) {
+    var loading = document.getElementById('loading');
+    if (loading) {
+        loading.style.display = 'block';
+    }
+    
+    // Use XMLHttpRequest like beginners would
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'data/articles.json', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                articles = data.articles;
+                
+                if (loading) {
+                    loading.style.display = 'none';
+                }
+                
+                // Now show the single article
+                showSingleArticle(articleId);
             } else {
                 if (loading) {
                     loading.style.display = 'none';
@@ -119,6 +153,9 @@ function showSingleArticle(articleId) {
     var container = document.getElementById('singleArticle');
     if (!container) return;
     
+    // Convert articleId to number for comparison
+    articleId = parseInt(articleId);
+    
     // Find the article
     var article = null;
     for (var i = 0; i < articles.length; i++) {
@@ -127,15 +164,16 @@ function showSingleArticle(articleId) {
             break;
         }
     }
-    
+    // If not found, just show the first article
+    if (!article && articles.length > 0) {
+        article = articles[0];
+    }
     if (!article) {
-        container.innerHTML = '<div class="error">Article not found!</div>';
+        container.innerHTML = '<div class="error">No articles available!</div>';
         return;
     }
-    
     // Change page title
     document.title = article.title + ' - Punch News';
-    
     var html = '';
     html += '<div class="article-full">';
     html += '<a href="' + getCategoryPage(article.category) + '" class="back-link">← Back to ' + formatCategory(article.category) + '</a>';
@@ -145,7 +183,6 @@ function showSingleArticle(articleId) {
     html += '<div class="article-meta">By ' + article.author + ' | ' + formatDate(article.date) + '</div>';
     html += '<div class="article-content">' + formatContent(article.content) + '</div>';
     html += '</div>';
-    
     container.innerHTML = html;
 }
 

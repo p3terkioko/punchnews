@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Sports News - Punch News</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.sports-header {
+    background-color: #228B22;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+.sports-header h1 {
+    font-size: 32px;
+    margin: 0;
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="nav-container">
+<div class="logo">
+<a href="index.html">Punch News</a>
+</div>
+<button class="menu-toggle">☰</button>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="breaking-news.html">Breaking News</a></li>
+<li><a href="business.html">Business</a></li>
+<li><a href="entertainment.html">Entertainment</a></li>
+<li><a href="sports.html" style="color: #FF0000;">Sports</a></li>
+<li><a href="opinion.html">Opinion</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</div>
+</nav>
+</header>
+
+<main>
+<div class="sports-header">
+<h1>Sports</h1>
+<p>Sports news, scores and updates</p>
+</div>
+
+<div class="container">
+<div class="search-container">
+<input type="text" id="searchBar" placeholder="Search sports news...">
+</div>
+
+<div id="articlesContainer" class="articles-grid">
+<!-- Sports articles will be loaded here -->
+</div>
+</div>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Punch News</h3>
+<p>Your news source</p>
+</div>
+<div class="footer-section">
+<h4>Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Punch News</p>
+</div>
+</div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+window.onload = function() {
+    loadCategoryArticles('sports');
+};
+</script>
+</body>
+</html>
