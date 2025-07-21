@@ -248,35 +248,6 @@ function loadCategoryArticles(category) {
     showArticles(filtered);
 }
 
-// Contact form
-function validateContactForm() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
-    
-    var errors = [];
-    
-    if (name.length < 2) {
-        errors.push('Name must be at least 2 characters');
-    }
-    
-    if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
-        errors.push('Please enter a valid email');
-    }
-    
-    if (message.length < 10) {
-        errors.push('Message must be at least 10 characters');
-    }
-    
-    if (errors.length > 0) {
-        alert('Errors:\n' + errors.join('\n'));
-        return false;
-    }
-    
-    alert('Thank you for your message! We will get back to you soon.');
-    return false; // Don't actually submit
-}
-
 // Helper functions
 function formatCategory(category) {
     return category.replace('-', ' ').replace(/\b\w/g, function(l) { 
@@ -321,4 +292,3 @@ function showError(message) {
 
 // Make functions available globally for inline onclick handlers
 window.loadCategoryArticles = loadCategoryArticles;
-window.validateContactForm = validateContactForm;
