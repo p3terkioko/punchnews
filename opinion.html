@@ -67,7 +67,10 @@
     <script src="js/main.js"></script>
     <script>
         window.onload = function() {
-            loadCategoryArticles('opinion');
+            loadArticles();
+            setTimeout(function() {
+                loadCategoryArticles('opinion');
+            }, 500);
         };
     </script>
 </body>
